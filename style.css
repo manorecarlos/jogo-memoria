@@ -49,3 +49,9 @@ body {
     height: 6rem;
     cursor: pointer;
 }
+
+.selected-card {
+    color: white;
+    background-color: blue;
+    transition: 0.5s
+}
