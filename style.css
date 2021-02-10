@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
 :root {
     font-size: 16px;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -13,8 +16,8 @@ body {
 
 .table {
     height: 100vh;
-    background-color: #3f88c5;
     padding-top: 5rem;
+    background-color: #3f88c5;
 }
 
 .container {
@@ -25,33 +28,54 @@ body {
 .container h1,
 .container small {
     color: white;
+    margin-top: 0px;
+    text-align: center;
 }
 
-.table-board {
-    margin-top: 10px;
+.container button {
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    border-color: transparent;
+}
+
+.table-board {    
     width: 40vw;
+    margin-top: 10px;
     padding: 10px;
+
+    color: transparent;
+
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.5rem;
     place-items: center;
+
     background-color: white;
     border-radius: 0.625rem;
 }
 
 .table-board-card {
+    width: 5rem;
+    height: 6rem;
+
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 00.625rem;
+
     background-color: lightblue;
-    width: 5rem;
-    height: 6rem;
+
     cursor: pointer;
+    font-weight: 700;
+
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
 }
 
 .selected-card {
     color: white;
     background-color: blue;
-    transition: 0.5s
+    transition: 0.5s;
+    transform: rotateY(0);
 }
