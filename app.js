@@ -4,6 +4,9 @@ const board = document.querySelector(".table-board")
 // Selecionado o elemento HTML onde a pontuação será inserida
 const score = document.querySelector(".table-score")
 
+// Selecionando o elemento HTML onde o jogo será reiniciado
+const btnRestart = document.querySelector("#btn-restart")
+
 // Pares de cartas iniciais
 let initialPairs = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8]
 
@@ -20,9 +23,11 @@ const loadGame = () => {
 
     const shufflePairs = shuffle(initialPairs)
 
-    createCards(shufflePairs)
+    while(board.firstChild) {
+        board.firstChild.remove()
+    }
 
-    console.log(shufflePairs)
+    createCards(shufflePairs)
 }
 
 // Embaralhando as cartas
@@ -101,4 +106,4 @@ const compareCards = (value) => {
 
 loadGame()
 
-//1h24
+btnRestart.addEventListener("click", loadGame)
